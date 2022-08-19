@@ -1,14 +1,18 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Caleb's Movie Catalog</title>
+    <title>Caleb's Movies</title>
     <link rel="stylesheet" href="./stylesheets/movies.css">
-    <script src="./javascripts/movies.js"></script>
   </head>
   <body>
-    <h1>Caleb's Movies</h1>
-    <div class="movies">
-      <ul id="movies-list" class="movies-grid"></ul>
+    <h1>Caleb's Movies (Sorted by <span></span>)</h1>
+    <button id="asc">Sort Ascending</button>
+    <button id="des">Sort Descending</button>
+    <!-- <img src='./images/arrow-up.svg'> -->
+    <div class="movies" id="movies">
+      <ul class="movies__list" id="movies-list"></ul>
     </div>
+
+    <script src="./javascripts/movies.js"></script>
   </body>
 </html>

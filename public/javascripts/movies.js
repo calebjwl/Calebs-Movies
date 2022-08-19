@@ -1,11 +1,18 @@
-const Http = new XMLHttpRequest();
-Http.open("GET", '/movies');
-Http.send();
-Http.onloadend = () => showMovies();
+const moviesList = document.getElementById('movies-list');
+const btnAsc = document.getElementById('asc');
+const btnDes = document.getElementById('des');
 
-function showMovies() {
-  const movies = JSON.parse(Http.response);
-  const moviesList = document.getElementById('movies-list');
+let movies = [];
+
+const Http = new XMLHttpRequest();
+Http.open("GET", '/movies', true);
+Http.send();
+Http.onloadend = () => {
+  movies = JSON.parse(Http.response);
+  populateMovies();
+};
+
+function populateMovies() {
   moviesList.innerHTML = movies.map(movie => {
     return (`
       <li class="movie">
@@ -19,3 +26,22 @@ function showMovies() {
     `);
   }).join('');
 }
+
+function sortAsc() {
+  movies.sort();
+  populateMovies();
+}
+
+function sortDes() {
+  movies.sort().reverse();
+  populateMovies();
+}
+
+// Click Events for the sort buttons
+// Sort by title
+btnAsc.addEventListener('click', sortAsc);
+btnDes.addEventListener('click', sortDes);
+
+// Sort by rating
+// Sort by runtime
+// Sort by year
