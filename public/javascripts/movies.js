@@ -1,4 +1,8 @@
 const moviesList = document.getElementById('movies-list');
+const btnTitle = document.getElementById('btnTitle');
+const btnRating = document.getElementById('btnRating');
+const btnRuntime = document.getElementById('btnRuntime');
+const btnYear = document.getElementById('btnYear');
 
 let movies = [];
 
@@ -30,36 +34,18 @@ function reverseSort() {
   populateMovies();
 }
 
-function sortByTitle() {
-  console.log('tite');
-  movies.sort((a, b) => (a.name > b.name) ? 1 : -1);
-  populateMovies();
-}
-
-function sortByRating() {
-  console.log('rate')
-  movies.sort((a, b) => (a.rating > b.rating) ? 1 : -1);
-  populateMovies();
-}
-
-function sortByRuntime() {
-  console.log('runtim')
-  movies.sort((a, b) => (a.runtime > b.runtime) ? 1 : -1);
-  populateMovies();
-}
-
-function sortByYear() {
-  console.log('year')
-  movies.sort((a, b) => (a.year > b.year) ? 1 : -1);
+function sortMoviesByProp(prop) {
+  console.log(prop);
+  movies.sort((a, b) => (a[prop] > b[prop]) ? 1 : -1);
   populateMovies();
 }
 
 // Click Events for the sort buttons
 // Sort by title
-btnTitle.addEventListener('click', sortByTitle);
+btnTitle.addEventListener('click', () => sortMoviesByProp('title'));
 // Sort by rating
-btnRating.addEventListener('click', sortByRating);
+btnRating.addEventListener('click', () => sortMoviesByProp('rating'));
 // Sort by runtime
-btnRuntime.addEventListener('click', sortByRuntime);
+btnRuntime.addEventListener('click', () => sortMoviesByProp('runtime'));
 // Sort by year
-btnYear.addEventListener('click', sortByYear);
+btnYear.addEventListener('click', () => sortMoviesByProp('year'));
