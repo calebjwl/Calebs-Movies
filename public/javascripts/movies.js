@@ -1,6 +1,4 @@
 const moviesList = document.getElementById('movies-list');
-const btnAsc = document.getElementById('asc');
-const btnDes = document.getElementById('des');
 
 let movies = [];
 
@@ -27,21 +25,41 @@ function populateMovies() {
   }).join('');
 }
 
-function sortAsc() {
-  movies.sort();
+function reverseSort() {
+  movies.sort().reverse();
   populateMovies();
 }
 
-function sortDes() {
-  movies.sort().reverse();
+function sortByTitle() {
+  console.log('tite');
+  movies.sort((a, b) => (a.name > b.name) ? 1 : -1);
+  populateMovies();
+}
+
+function sortByRating() {
+  console.log('rate')
+  movies.sort((a, b) => (a.rating > b.rating) ? 1 : -1);
+  populateMovies();
+}
+
+function sortByRuntime() {
+  console.log('runtim')
+  movies.sort((a, b) => (a.runtime > b.runtime) ? 1 : -1);
+  populateMovies();
+}
+
+function sortByYear() {
+  console.log('year')
+  movies.sort((a, b) => (a.year > b.year) ? 1 : -1);
   populateMovies();
 }
 
 // Click Events for the sort buttons
 // Sort by title
-btnAsc.addEventListener('click', sortAsc);
-btnDes.addEventListener('click', sortDes);
-
+btnTitle.addEventListener('click', sortByTitle);
 // Sort by rating
+btnRating.addEventListener('click', sortByRating);
 // Sort by runtime
+btnRuntime.addEventListener('click', sortByRuntime);
 // Sort by year
+btnYear.addEventListener('click', sortByYear);
