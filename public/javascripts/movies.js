@@ -42,7 +42,7 @@ function sortMoviesByProp(prop) {
 
 // Click Events for the sort buttons
 // Sort by title
-btnTitle.addEventListener('click', () => sortMoviesByProp('title'));
+btnTitle.addEventListener('click', () => sortMoviesByProp('name'));
 // Sort by rating
 btnRating.addEventListener('click', () => sortMoviesByProp('rating'));
 // Sort by runtime
