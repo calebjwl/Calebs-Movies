@@ -1,5 +1,84 @@
-.movies__list {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-  align-items: center;
+.movies {
+  margin-top: 2rem;
+}
+
+.movie {
+  background-color: #fbfbfb;
+  display: flex;
+  margin: 0 -.5rem;
+  padding: 1.5rem 3rem 1.5rem 1.5rem;
+}
+
+.movie:nth-child(2n) {
+  background-color: #f6f6f5;
+}
+
+.movie__image {
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  height: 13rem;
+  margin-right: 2rem;
+  overflow: hidden;
+  width: 15%;;
+}
+
+.movie__image img {
+  object-fit: cover;
+  width: 100%;
+}
+
+.movie__info {
+  width: 85%;
+}
+
+.movie__title {
+  font-weight: 900;
+  margin-bottom: .5rem;
+}
+
+.movie__details {
+  display: flex;
+  font-size: 90%;
+}
+
+.movie__year {
+  opacity: 60%;
+  font-weight: 400;
+}
+
+.movie__rating {
+  font-weight: 500;
+}
+
+.movie__rating::after {
+  content: "|";
+  margin: 0 .5rem;
+  opacity: 30%;
+}
+
+.movie__desc {
+
+}
+
+@media only screen and (max-width: 600px) {
+  .movies {
+    margin-top: 1rem;
+  }
+
+  .movie {
+    padding: 1rem;
+  }
+
+  .movie__image {
+    height: 6.5rem;
+    margin-right: 1rem;
+    width: 20%;
+  }
+
+  .movie__title {
+    font-size: 1rem;
+  }
+
+  .movie__desc {
+    display: none;
+  }
 }

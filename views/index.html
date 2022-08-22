@@ -2,20 +2,28 @@
 <html>
   <head>
     <title>Caleb's Movies</title>
-    <link rel="stylesheet" href="./stylesheets/movies.css">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="./stylesheets/index.css">
   </head>
   <body>
-    <h1>Caleb's Movies (Sorted by <span></span>)</h1>
-    <button id="btnTitle">Sort by Title</button>
-    <!-- <img src='./images/arrow-up.svg'> -->
-    <button id="btnRating">Sort by Rating</button>
-    <!-- <img src='./images/arrow-up.svg'> -->
-    <button id="btnRuntime">Sort by Runtime</button>
-    <!-- <img src='./images/arrow-up.svg'> -->
-    <button id="btnYear">Sort by Year</button>
-    <!-- <img src='./images/arrow-up.svg'> -->
-    <div class="movies" id="movies">
-      <ul class="movies__list" id="movies-list"></ul>
+    <div class="container">
+      <div class="header">
+        <h1 class="header__title">&#127909; Caleb's Movies (Sorted by <span></span>)</h1>
+        <div class="header__sort">
+          Sort by: 
+          <button class="header__button" id="btn-title">Title</button>
+          <button class="header__button" id="btn-rating">Rating</button>
+          <button class="header__button" id="btn-runtime">Runtime</button>
+          <button class="header__button" id="btn-year">Year</button>
+        </div>
+      </div>
+      <ul class="movies" id="movies-list"></ul>
     </div>
     
     <script src="./javascripts/movies.js"></script>
