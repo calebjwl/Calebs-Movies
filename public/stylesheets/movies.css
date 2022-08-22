@@ -5,7 +5,6 @@
 .movie {
   background-color: #fbfbfb;
   display: flex;
-  margin: 0 -.5rem;
   padding: 1.5rem 3rem 1.5rem 1.5rem;
 }
 
@@ -14,20 +13,14 @@
 }
 
 .movie__image {
-  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  box-shadow: rgba(0, 0, 0, 0.2) 0px 3px 8px;
   height: 13rem;
   margin-right: 2rem;
-  overflow: hidden;
-  width: 15%;;
+  width: 9rem;
 }
 
 .movie__image img {
   object-fit: cover;
-  width: 100%;
-}
-
-.movie__info {
-  width: 85%;
 }
 
 .movie__title {
@@ -41,7 +34,7 @@
 
 .movie__details {
   display: flex;
-  font-size: 90%;
+  font-size: .9rem;
   opacity: 60%;
 }
 
@@ -61,21 +54,21 @@
   }
 
   .movie {
-    padding: 1rem;
+    padding: .5rem 1rem;
   }
 
   .movie__image {
     height: 6.5rem;
     margin-right: 1rem;
-    width: 20%;
-  }
-
-  .movie__info {
-    width: 80%;
+    width: 4.5rem;
   }
 
   .movie__title {
     font-size: 1rem;
+  }
+
+  .movie__details {
+    font-size: .8rem;
   }
 
   .movie__rating {

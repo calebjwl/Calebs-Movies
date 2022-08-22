@@ -6,7 +6,7 @@ const btnRuntime = document.getElementById('btn-runtime');
 const btnYear = document.getElementById('btn-year');
 const btnReverseSort = document.getElementById('btn-reverse');
 
-let movies = [];
+var movies = [];
 
 const Http = new XMLHttpRequest();
 Http.open("GET", '/movies', true);
@@ -16,14 +16,7 @@ Http.onloadend = () => {
   populateMovies();
 };
 
-function updateTitle(prop) {
-  if (prop === 'name') {
-    prop = 'title';
-  }
-  var capitalizedProp = prop.charAt(0).toUpperCase() + prop.slice(1);
-  sortedByText.innerHTML = capitalizedProp;
-}
-
+// DOM manipulation functions
 function populateMovies() {
   moviesList.innerHTML = movies.map(movie => {
     return (`
@@ -44,6 +37,15 @@ function populateMovies() {
   }).join('');
 }
 
+function updateTitle(prop) {
+  if (prop === 'name') {
+    prop = 'title';
+  }
+  const capitalizedProp = prop.charAt(0).toUpperCase() + prop.slice(1);
+  sortedByText.innerHTML = capitalizedProp;
+}
+
+// Sort functions
 function sortByProp(prop) {
   movies.sort((a, b) => (a[prop] > b[prop]) ? 1 : (a[prop] === b[prop]) ? 0 : -1);
   updateTitle(prop);
@@ -63,22 +65,12 @@ function sortAlphanumeric(prop) {
 
 function reverseSort() {
   movies.sort().reverse();
-  console.log('reverse sort')
   populateMovies();
 }
 
-// Click Events for the sort buttons
-// Sort by title
+// Click events
 btnTitle.addEventListener('click', () => sortByProp('name'));
-// Sort by rating
 btnRating.addEventListener('click', () => sortByProp('rating'));
-// Sort by runtime
 btnRuntime.addEventListener('click', () =>  sortAlphanumeric('runtime'));
-// Sort by year
 btnYear.addEventListener('click', () => sortByProp('year'));
-//Reverse sort
 btnReverseSort.addEventListener('click', reverseSort);
-
-// todo: 
-// check css (empty classes/unused rules/measurements)
-// 'about' page?
