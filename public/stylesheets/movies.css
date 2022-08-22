@@ -38,11 +38,7 @@
 .movie__details {
   display: flex;
   font-size: 90%;
-}
-
-.movie__year {
   opacity: 60%;
-  font-weight: 400;
 }
 
 .movie__rating {
@@ -51,12 +47,8 @@
 
 .movie__rating::after {
   content: "|";
-  margin: 0 .5rem;
+  margin: 0 .25rem;
   opacity: 30%;
-}
-
-.movie__desc {
-
 }
 
 @media only screen and (max-width: 600px) {
@@ -74,8 +66,16 @@
     width: 20%;
   }
 
+  .movie__info {
+    width: 80%;
+  }
+
   .movie__title {
     font-size: 1rem;
+  }
+
+  .movie__rating {
+    font-weight: 400;
   }
 
   .movie__desc {

@@ -1,4 +1,5 @@
 const moviesList = document.getElementById('movies-list');
+const sortedByText = document.getElementById('sorted-by');
 const btnTitle = document.getElementById('btn-title');
 const btnRating = document.getElementById('btn-rating');
 const btnRuntime = document.getElementById('btn-runtime');
@@ -13,6 +14,14 @@ Http.onloadend = () => {
   movies = JSON.parse(Http.response);
   populateMovies();
 };
+
+function updateTitle(prop) {
+  if (prop === 'name') {
+    prop = 'title';
+  }
+  var capitalizedProp = prop.charAt(0).toUpperCase() + prop.slice(1);
+  sortedByText.innerHTML = capitalizedProp;
+}
 
 function populateMovies() {
   moviesList.innerHTML = movies.map(movie => {
@@ -46,12 +55,14 @@ function sortAlphanumeric(prop) {
       sensitivity: 'base'
     });
   });
-  populateMovies();
+  updateTitle(prop);
+  populateMovies(prop);
 }
 
 function sortByProp(prop) {
   movies.sort((a, b) => (a[prop] > b[prop]) ? 1 : (a[prop] === b[prop]) ? 0 : -1);
-  populateMovies();
+  updateTitle(prop);
+  populateMovies(prop);
 }
 
 // Click Events for the sort buttons
