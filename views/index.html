@@ -16,11 +16,16 @@
       <div class="header">
         <h1 class="header__title">&#127909; Caleb's Movies (Sorted by <span id="sorted-by">Title</span>)</h1>
         <div class="header__sort">
-          Sort by: 
-          <button class="header__button" id="btn-title">Title</button>
-          <button class="header__button" id="btn-rating">Rating</button>
-          <button class="header__button" id="btn-runtime">Runtime</button>
-          <button class="header__button" id="btn-year">Year</button>
+          <div>
+            Sort by: 
+            <button class="header__button" id="btn-title">Title</button>
+            <button class="header__button" id="btn-rating">Rating</button>
+            <button class="header__button" id="btn-runtime">Runtime</button>
+            <button class="header__button" id="btn-year">Year</button>
+          </div>
+          <button class="header__button--reverse" id="btn-reverse">
+            <img src="./images/arrow-up-down.svg" alt="Reverse sort button">
+          </button>
         </div>
       </div>
       <ul class="movies" id="movies-list"></ul>

@@ -4,6 +4,7 @@ const btnTitle = document.getElementById('btn-title');
 const btnRating = document.getElementById('btn-rating');
 const btnRuntime = document.getElementById('btn-runtime');
 const btnYear = document.getElementById('btn-year');
+const btnReverseSort = document.getElementById('btn-reverse');
 
 let movies = [];
 
@@ -43,10 +44,11 @@ function populateMovies() {
   }).join('');
 }
 
-// function reverseSort() {
-//   movies.sort().reverse();
-//   populateMovies();
-// }
+function sortByProp(prop) {
+  movies.sort((a, b) => (a[prop] > b[prop]) ? 1 : (a[prop] === b[prop]) ? 0 : -1);
+  updateTitle(prop);
+  populateMovies(prop);
+}
 
 function sortAlphanumeric(prop) {
   movies.sort((a, b) => {
@@ -59,10 +61,10 @@ function sortAlphanumeric(prop) {
   populateMovies(prop);
 }
 
-function sortByProp(prop) {
-  movies.sort((a, b) => (a[prop] > b[prop]) ? 1 : (a[prop] === b[prop]) ? 0 : -1);
-  updateTitle(prop);
-  populateMovies(prop);
+function reverseSort() {
+  movies.sort().reverse();
+  console.log('reverse sort')
+  populateMovies();
 }
 
 // Click Events for the sort buttons
@@ -74,8 +76,9 @@ btnRating.addEventListener('click', () => sortByProp('rating'));
 btnRuntime.addEventListener('click', () =>  sortAlphanumeric('runtime'));
 // Sort by year
 btnYear.addEventListener('click', () => sortByProp('year'));
+//Reverse sort
+btnReverseSort.addEventListener('click', reverseSort);
 
 // todo: 
-// mobile responsive
-// make css variables / check pixels/rem
+// check css (empty classes/unused rules/measurements)
 // 'about' page?

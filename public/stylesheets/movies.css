@@ -35,6 +35,10 @@
   margin-bottom: .5rem;
 }
 
+.movie__year {
+  font-weight: 400;
+}
+
 .movie__details {
   display: flex;
   font-size: 90%;
