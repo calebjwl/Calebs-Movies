@@ -1,4 +1,5 @@
 # BusPatrol-Challenge
+Run `npm start` to start application.
 
 ## Potential Improvements & Additional Features
 
