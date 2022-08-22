@@ -22,7 +22,7 @@ function populateMovies() {
     return (`
       <li class="movie">
         <div class="movie__image">
-          <img class="movie__image" src="./images/${movie.src}.jpg" alt="${movie.name} (${movie.year})" />
+          <img class="movie__image" src="./images/jpg/${movie.src}.jpg" alt="${movie.name} (${movie.year})" />
         </div>
         <div class="movie__info">
           <h2 class="movie__title">${movie.name} <span class="movie__year">(${movie.year})</span></h2>
